@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="utf-8">
+    <title>article-search</title>
+    <meta name="description" content="article-search">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="scripts/modules/swiper.min.css">
+    <link rel="stylesheet" href="scripts/modules/select2.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link href="content/css/main.css" rel="stylesheet"></head>
+  <body class="article-search" dir="rtl">
+<header class="header">
+  <div class="header__top" tabindex="1"><a class="skip-link" href="#main" tabindex="1" aria-label="top menu Skip to main">Skip to main</a>
+    <nav class="header__menu" aria-label="general navigation">
+      <ul class="header__menu-ul" role="list">
+        <li class="header__menu-li" role="listitem"><a class="link link--top" href="#" tabindex="1">
+            <div class="link__text">ידידים</div></a>
+        </li>
+        <li class="header__menu-li" role="listitem"><a class="link link--top is-current" href="#" tabindex="1">
+            <div class="link__text">מועמדים</div></a>
+        </li>
+        <li class="header__menu-li" role="listitem"><a class="link link--top" href="#" tabindex="1">
+            <div class="link__text">סטודנטים</div></a>
+        </li>
+        <li class="header__menu-li" role="listitem"><a class="link link--top" href="#" tabindex="1">
+            <div class="link__text">סגל</div></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="lang-block js-dmi js-close-outside" data-lang>
+      <button class="lang-block__body" aria-haspopup="listbox" aria-expanded="false" tabindex="1">
+        <div class="lang-block__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM10 19.1111C8.83333 19.1111 7.61111 17 7.05556 13.6667C8 13.5 9 13.3889 10 13.3889C11 13.3889 12 13.5 12.9444 13.6667C12.3889 17 11.1667 19.1111 10 19.1111ZM10 12.5C8.94444 12.5 7.88889 12.6111 6.94444 12.7778C6.83333 11.9444 6.77778 11 6.77778 10C6.77778 9 6.83333 8.11111 6.94444 7.22222C7.94444 7.38889 8.94444 7.5 10 7.5C11.0556 7.5 12.1111 7.38889 13.0556 7.22222C13.1667 8.05556 13.2222 9 13.2222 10C13.2222 11 13.1667 11.8889 13.0556 12.7778C12.1111 12.6111 11.0556 12.5 10 12.5ZM10 0.888889C11.1667 0.888889 12.3889 3 12.9444 6.33333C12 6.5 11 6.61111 10 6.61111C9 6.61111 8 6.5 7.05556 6.33333C7.61111 3 8.83333 0.888889 10 0.888889ZM13.9444 7.05556C15.4444 6.72222 16.7778 6.11111 17.8333 5.38889C18.6111 6.72222 19.1111 8.33333 19.1111 10C19.1111 11.6667 18.6667 13.2222 17.8333 14.6111C16.7778 13.8889 15.4444 13.3333 13.9444 12.9444C14.0556 12 14.1111 11.0556 14.1111 10C14.1111 8.94444 14.0556 8 13.9444 7.05556ZM17.3333 4.66667C16.3889 5.33333 15.2222 5.83333 13.8333 6.16667C13.5 3.94444 12.8333 2.16667 11.9444 1.11111C14.1667 1.61111 16.0556 2.88889 17.3333 4.66667ZM8.05556 1.11111C7.22222 2.16667 6.55556 3.94444 6.16667 6.16667C4.77778 5.83333 3.55556 5.33333 2.66667 4.66667C3.94444 2.88889 5.83333 1.61111 8.05556 1.11111ZM2.16667 5.38889C3.22222 6.11111 4.55556 6.66667 6.05556 7.05556C5.94444 8 5.88889 8.94444 5.88889 10C5.88889 11.0556 5.94444 12 6.05556 12.9444C4.55556 13.2778 3.22222 13.8889 2.16667 14.6111C1.38889 13.2222 0.888889 11.6667 0.888889 10C0.888889 8.33333 1.38889 6.77778 2.16667 5.38889ZM2.66667 15.3333C3.61111 14.6667 4.77778 14.1667 6.16667 13.8333C6.5 16.0556 7.16667 17.8333 8.05556 18.8889C5.83333 18.3889 3.94444 17.1111 2.66667 15.3333ZM11.9444 18.8889C12.7778 17.8333 13.4444 16.0556 13.8333 13.8333C15.2222 14.1667 16.4444 14.6667 17.3333 15.3333C16.0556 17.1111 14.1667 18.3889 11.9444 18.8889Z"></path>
+          </svg>
+        </div>
+        <div class="lang-block__name js-lang-name">עב</div>
+        <div class="lang-block__arrow">
+          <svg width="14" height="9" viewBox="0 0 14 9" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.39425 0.647361C2.01504 0.245843 1.38213 0.22776 0.980613 0.606971C0.579094 0.986183 0.561011 1.61909 0.940223 2.02061L2.39425 0.647361ZM7.00057 6.98104L6.27356 7.66767L7.00057 8.43744L7.72758 7.66766L7.00057 6.98104ZM13.0609 2.02061C13.4401 1.61909 13.422 0.986181 13.0205 0.606969C12.619 0.227758 11.9861 0.245841 11.6069 0.647359L13.0609 2.02061ZM0.940223 2.02061L6.27356 7.66767L7.72758 6.29442L2.39425 0.647361L0.940223 2.02061ZM7.72758 7.66766L13.0609 2.02061L11.6069 0.647359L6.27356 6.29442L7.72758 7.66766Z"></path>
+          </svg>
+        </div>
+        <ul class="lang-block__dropdown clear-ul-style" role="listbox" id="lang-list" aria-labelledby="lang-list1">
+          <li class="lang-block__item is-current js-lang-item" aria-selected="true" role="option" id="lang-list1" tabindex="1" aria-label="למעבר לשפה העברית" data-name="עב"><a>עברית</a></li>
+          <li class="lang-block__item js-lang-item" role="option" id="lang-list2" tabindex="1" aria-label="" data-name="بية"><a>العربية</a></li>
+        </ul>
+      </button>
+    </div>
+  </div>
+  <div class="header__mid">
+    <button class="burger" role="button" tabindex="2" aria-expanded="false" aria-controls="nav-menu"><span class="burger__img"><img src="content/images/icons/burger.svg" width="30" height="26" alt=""></span><span class="burger__img">
+        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5994 1.39941L1.39941 20.5994M1.39941 1.39941L20.5994 20.5994" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span><span class="burger__text">תפריט</span></button><a class="logo" tabindex="6" aria-label="לוגו אוניברסיטת בן-גוריון בנגב"><img src="content/images/icons/logo.png" width="182" height="46" alt=""></a>
+    <div class="header__icons">
+      <button class="button button--search js-open-search" tabindex="6" aria-label="חיפוש">
+        <svg width="26" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3501 8.43711C2.3501 4.79893 5.29942 1.84961 8.9376 1.84961C12.5758 1.84961 15.5251 4.79893 15.5251 8.43711C15.5251 12.0753 12.5758 15.0246 8.9376 15.0246C5.29942 15.0246 2.3501 12.0753 2.3501 8.43711ZM8.9376 0.849609C4.74714 0.849609 1.3501 4.24665 1.3501 8.43711C1.3501 12.6276 4.74714 16.0246 8.9376 16.0246C10.8529 16.0246 12.6024 15.315 13.9376 14.1442L17.359 17.5657C17.5543 17.7609 17.8709 17.7609 18.0662 17.5657C18.2614 17.3704 18.2614 17.0538 18.0662 16.8586L14.6447 13.4371C15.8154 12.1019 16.5251 10.3524 16.5251 8.43711C16.5251 4.24665 13.1281 0.849609 8.9376 0.849609Z"></path>
+        </svg>
+      </button>
+      <div class="header__icons-stick"></div><a class="button button--favorite js-head-favorite" href="#" tabindex="7" aria-label="למועדפים">
+        <div class="button__count">4</div>
+        <svg width="26" height="26" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.9417 17.7293L5.49256 21.125L6.7245 13.9328L1.5 8.83982L8.70981 7.79338L11.9344 1.25L15.1589 7.79338L22.3688 8.83982L17.1442 13.9328L18.3762 21.125L11.9417 17.7293Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></a><a class="button button--default-hover button--header" href="#" tabindex="7" aria-label="להרשמה"><span class="button__text button__text--mob"> להרשמה</span><span class="button__text-desk">להרשמה</span></a>
+    </div>
+  </div>
+</header>
+<div class="nav-menu" id="nav-menu" tabindex="-1">
+  <div class="nav-menu__body">
+    <div class="nav-menu__sidebar">
+      <div class="nav-menu__big-links"><a class="big-link" href="#" tabindex="5">
+          <div class="big-link__icon"><img src="content/images/icons/adv1.svg" width="51" height="40"></div>
+          <div class="big-link__body">
+            <div class="big-link__text">איך לבחור מה ללמוד?</div>
+            <div class="big-link__arrow">
+              <svg width="25" height="17" viewbox="0 0 25 17" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.50014C0 8.29399 0.0859375 8.0971 0.228905 7.94885L7.9625 0.22845C8.26797 -0.076536 8.7625 -0.0757639 9.06719 0.22845C9.37266 0.532665 9.37266 1.02682 9.06719 1.33103L2.66641 7.72031H24.2188C24.65 7.72031 25 8.0693 25 8.50014C25 8.93099 24.65 9.27998 24.2188 9.27998H2.66719L9.06719 15.6693C9.37266 15.9735 9.37188 16.4676 9.06719 16.7718C8.76172 17.0761 8.26719 17.0761 7.9625 16.7718L0.228905 9.05144C0.0828114 8.90551 0.00234413 8.70476 0 8.50014Z"></path>
+              </svg>
+            </div>
+          </div></a><a class="big-link" href="#" tabindex="5">
+          <div class="big-link__icon"><img src="content/images/icons/adv4.svg" width="51" height="47"></div>
+          <div class="big-link__body">
+            <div class="big-link__text">למה בן גוריון?</div>
+            <div class="big-link__arrow">
+              <svg width="25" height="17" viewbox="0 0 25 17" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.50014C0 8.29399 0.0859375 8.0971 0.228905 7.94885L7.9625 0.22845C8.26797 -0.076536 8.7625 -0.0757639 9.06719 0.22845C9.37266 0.532665 9.37266 1.02682 9.06719 1.33103L2.66641 7.72031H24.2188C24.65 7.72031 25 8.0693 25 8.50014C25 8.93099 24.65 9.27998 24.2188 9.27998H2.66719L9.06719 15.6693C9.37266 15.9735 9.37188 16.4676 9.06719 16.7718C8.76172 17.0761 8.26719 17.0761 7.9625 16.7718L0.228905 9.05144C0.0828114 8.90551 0.00234413 8.70476 0 8.50014Z"></path>
+              </svg>
+            </div>
+          </div></a><a class="big-link" href="#" tabindex="5">
+          <div class="big-link__icon"><img src="content/images/icons/adv5.svg" width="40" height="50"></div>
+          <div class="big-link__body">
+            <div class="big-link__text">תכניות מצטיינות ומצטיינים</div>
+            <div class="big-link__arrow">
+              <svg width="25" height="17" viewbox="0 0 25 17" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.50014C0 8.29399 0.0859375 8.0971 0.228905 7.94885L7.9625 0.22845C8.26797 -0.076536 8.7625 -0.0757639 9.06719 0.22845C9.37266 0.532665 9.37266 1.02682 9.06719 1.33103L2.66641 7.72031H24.2188C24.65 7.72031 25 8.0693 25 8.50014C25 8.93099 24.65 9.27998 24.2188 9.27998H2.66719L9.06719 15.6693C9.37266 15.9735 9.37188 16.4676 9.06719 16.7718C8.76172 17.0761 8.26719 17.0761 7.9625 16.7718L0.228905 9.05144C0.0828114 8.90551 0.00234413 8.70476 0 8.50014Z"></path>
+              </svg>
+            </div>
+          </div></a></div>
+      <div class="nav-menu__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/pics/nav-menu.png" width="492" height="328"></div>
+    </div>
+    <div class="nav-menu__wrap">
+      <div class="nav-menu__close js-close-menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5994 1.39941L1.39941 20.5994M1.39941 1.39941L20.5994 20.5994" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="nav-menu__scroll">
+        <div class="nav-menu__list js-menu">
+          <div class="nav-menu__column" aria-label="menu column">
+            <div class="nav-menu__back" role="button"><span>תפריט ראשי</span></div>
+            <div class="nav-menu__column-list">
+              <button class="nav-menu__list-item" data-id="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">ללמוד באוניברסיטה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="2" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">החיים בקמפוס</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="3" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">יזמות וחדשנות</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">מחקר</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="5" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">אקדמיה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="6" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">מנהלה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="7" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">אודות</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="8" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">קישורים מהירים</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button><a class="mob-favorite active" href="#">
+                <button class="button button--favorite">
+                  <div class="mob-favorite__count">99</div>
+                  <svg width="26" height="26" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9417 17.7293L5.49256 21.125L6.7245 13.9328L1.5 8.83982L8.70981 7.79338L11.9344 1.25L15.1589 7.79338L22.3688 8.83982L17.1442 13.9328L18.3762 21.125L11.9417 17.7293Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <div class="mob-favorite__text">מועדפים</div></a>
+            </div>
+            <div class="nav-menu__column-bottom start"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="2"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="3"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="5"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="6"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="7"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="8"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+          </div>
+          <div class="nav-menu__column nav-menu__column--inner" tabindex="3" aria-label="menu column">
+            <div class="nav-menu__back" role="button"><img src="content/images/icons/back.svg" width="22" height="14"><span></span></div>
+            <div class="nav-menu__column-list">
+              <button class="nav-menu__list-item" data-id="9" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="10" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">לבוגרים ולבוגרות</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="11" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">המרכז ללימודי חוץ</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="12" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">מרכז היזמות 360 Yazamut</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="13" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">הקליניקה הקהילתית של פסיכולוגיה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="14" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית טרומפלדור: מרכז אמנות</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="15" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית הסנט</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="15" data-parent="1" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">קישורים מהירים</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="16" data-parent="2" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית טרומפלדור: מרכז אמנות</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="17" data-parent="2" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית הסנט</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="18" data-parent="2" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">קישורים מהירים</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="19" data-parent="3" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="20" data-parent="3" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">לבוגרים ולבוגרות</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="21" data-parent="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">המרכז ללימודי חוץ</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="22" data-parent="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">קישורים מהירים</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="23" data-parent="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="24" data-parent="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">לבוגרים ולבוגרות</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="25" data-parent="4" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">המרכז ללימודי חוץ</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="26" data-parent="5" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">הקליניקה הקהילתית של פסיכולוגיה</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="27" data-parent="5" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית טרומפלדור: מרכז אמנות</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="28" data-parent="6" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="29" data-parent="6" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">לבוגרים ולבוגרות</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="30" data-parent="6" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">המרכז ללימודי חוץ</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="31" data-parent="7" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="32" data-parent="7" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">לבוגרים ולבוגרות</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="33" data-parent="7" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">המרכז ללימודי חוץ</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="34" data-parent="8" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">גלריית הסנט</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="35" data-parent="8" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">קישורים מהירים</a>
+                </div>
+              </button>
+              <button class="nav-menu__list-item" data-id="36" data-parent="8" aria-haspopup="tree" aria-expanded="false" tabindex="3">
+                <div class="nav-link"><a class="nav-link__text" tabindex="-1" href="#">האוניברסיטה והקהילה</a>
+                  <div class="nav-link__arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.9707 0.75L0.970703 6.80789L6.9707 13.25" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button><a class="mob-favorite" href="#">
+                <button class="button button--favorite">
+                  <svg width="26" height="26" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9417 17.7293L5.49256 21.125L6.7245 13.9328L1.5 8.83982L8.70981 7.79338L11.9344 1.25L15.1589 7.79338L22.3688 8.83982L17.1442 13.9328L18.3762 21.125L11.9417 17.7293Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <div class="mob-favorite__text">מועדפים</div></a>
+            </div>
+            <div class="nav-menu__column-bottom" data-id="9"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="10"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="11"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="12"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="15"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="16"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="17"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="18"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="19"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="20"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="21"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="22"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="23"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="24"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="25"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="26"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="27"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="28"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="29"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="30"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="31"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="32"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="33"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="34"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="35"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="36"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+          </div>
+          <div class="nav-menu__column nav-menu__column--inner" tabindex="3" aria-label="menu column">
+            <div class="nav-menu__back" role="button"><img src="content/images/icons/back.svg" width="22" height="14"><span></span></div>
+            <div class="nav-menu__column-list">
+              <button class="nav-menu__list-item" data-id="37" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">תואר שלישי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="38" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">חיפוש מנחים.ות</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="39" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">בתר דוקטור</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="40" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">תואר שלישי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="41" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">חיפוש מנחים.ות</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="42" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">בתר דוקטור</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="43" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">תואר שלישי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="44" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">חיפוש מנחים.ות</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="45" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">בתר דוקטור</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="45" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="46" data-parent="11">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="60" data-parent="16">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="80" data-parent="16">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="47" data-parent="23">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="48" data-parent="23">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="49" data-parent="24">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="50" data-parent="27">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="51" data-parent="27">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="52" data-parent="36">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="53" data-parent="36">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="54" data-parent="36">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="55" data-parent="12">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="56" data-parent="13">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="57" data-parent="13">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button>
+              <button class="nav-menu__list-item" data-id="58" data-parent="13">
+                <div class="nav-link" tabindex="3"><a class="nav-link__text">סטודנטים מובילים חדשנות במגזר הציבורי</a></div>
+              </button><a class="mob-favorite active" href="#">
+                <button class="button button--favorite">
+                  <div class="mob-favorite__count">99</div>
+                  <svg width="26" height="26" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9417 17.7293L5.49256 21.125L6.7245 13.9328L1.5 8.83982L8.70981 7.79338L11.9344 1.25L15.1589 7.79338L22.3688 8.83982L17.1442 13.9328L18.3762 21.125L11.9417 17.7293Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <div class="mob-favorite__text">מועדפים</div></a>
+            </div>
+            <div class="nav-menu__column-bottom" data-id="37"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="38"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="39"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="40"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="-1"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="44"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="45"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="45"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="46"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="60"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="80"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="47"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="48"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="49"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="50"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="51"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="52"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="53"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="54"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="55"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="56"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="57"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+            <div class="nav-menu__column-bottom" data-id="58"><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv6.svg" width="51" height="40"></div>
+                <div class="column-link__text">חדשות</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv7.svg" width="51" height="40"></div>
+                <div class="column-link__text">אירועים</div></a><a class="column-link" href="#" tabindex="3">
+                <div class="column-link__icon"><img src="content/images/icons/adv8.svg" width="51" height="40"></div>
+                <div class="column-link__text">ספרייה</div></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="search-block" hidden>
+  <button class="search-block__close js-close-search" tabindex="6" aria-label="סגירה">
+    <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.5994 1.39941L1.39941 20.5994M1.39941 1.39941L20.5994 20.5994" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <div class="search-block__body">
+    <div class="catalog-wrap__top-mob">
+      <div class="close-mob-search"><img src="content/images/icons/arrow-mob.svg" width="10" height="18"></div>
+      <h2 class="title title--mid title--dark">מה תרצו לחפש?</h2>
+    </div>
+    <h2 class="title title--dark title--middle">מה תרצו לחפש?</h2>
+    <div class="search-block__form">
+      <!-- @TODO: Results in search_main.php file-->
+      <form class="form form--search typeahead__container" id="search-v1" name="search-v1" role="search">
+        <div class="typeahead__field form__body">
+          <div class="form__item typeahead__query">
+            <input class="form__input js-typeahead-search-2" name="search-main[query]" id="typeahead-search-2" tabindex="6" autocomplete="off" placeholder="מה מעניין אתכם...">
+          </div>
+          <div class="typeahead__button form__submit">
+            <button class="button button--submit" type="submit" tabindex="6"><span class="button__icon">
+                <svg width="40" height="20" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3501 8.43711C2.3501 4.79893 5.29942 1.84961 8.9376 1.84961C12.5758 1.84961 15.5251 4.79893 15.5251 8.43711C15.5251 12.0753 12.5758 15.0246 8.9376 15.0246C5.29942 15.0246 2.3501 12.0753 2.3501 8.43711ZM8.9376 0.849609C4.74714 0.849609 1.3501 4.24665 1.3501 8.43711C1.3501 12.6276 4.74714 16.0246 8.9376 16.0246C10.8529 16.0246 12.6024 15.315 13.9376 14.1442L17.359 17.5657C17.5543 17.7609 17.8709 17.7609 18.0662 17.5657C18.2614 17.3704 18.2614 17.0538 18.0662 16.8586L14.6447 13.4371C15.8154 12.1019 16.5251 10.3524 16.5251 8.43711C16.5251 4.24665 13.1281 0.849609 8.9376 0.849609Z"></path>
+                </svg></span></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+    <main id="main">
+      <div class="backdrop"></div>
+      <div class="small-menu js-dmi" data-toggle>
+        <button class="widget-button" tabindex="9" aria-expanded="false"><span class="widget-button__text">מתעניינים<br>בלימודים?</span></button>
+        <ul class="small-menu__body clear-ul-style" role="list">
+          <li role="listitem"><a class="drop-link" tabindex="-1" href="tel:086461111" aria-label="phone">
+              <div class="drop-link__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/phone.svg" width="24" height="24" alt=""></div>
+              <!--div(class="drop-link__text drop-link__text--desk") 08-6461111-->
+              <div class="drop-link__text drop-link__text--mob">טלפון</div></a></li>
+          <li role="listitem"><a class="drop-link" tabindex="-1" href="mailto:mail@bgu.ac.il" aria-label="email">
+              <div class="drop-link__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/email.svg" width="24" height="24" alt=""></div>
+              <div class="drop-link__text">אימייל</div></a></li>
+          <li role="listitem"><a class="drop-link" tabindex="-1" href="#" aria-label="פנייה">
+              <div class="drop-link__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/contactus.svg" width="24" height="24" alt=""></div>
+              <div class="drop-link__text">פנייה</div></a></li>
+          <li role="listitem"><a class="drop-link" tabindex="-1" href="#" aria-label="ייעוץ">
+              <div class="drop-link__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/advicer.svg" width="24" height="24" alt=""></div>
+              <div class="drop-link__text">ייעוץ</div></a></li>
+          <li role="listitem"><a class="drop-link" tabindex="-1" href="#" aria-label="וואטספ">
+              <div class="drop-link__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/whatsapp.svg" width="24" height="24" alt=""></div>
+              <div class="drop-link__text">וואטספ</div></a></li>
+        </ul>
+      </div>
+      <div class="container container--padding">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a class="breadcrumbs__link" href="#"><span class="breadcrumbs__link-text">בית</span>
+                <div class="breadcrumbs__link-arrow">
+                  <svg width="7" height="11" viewbox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.38599 1.12769C6.54861 0.974112 6.55593 0.717784 6.40235 0.555169C6.24877 0.392555 5.99244 0.385231 5.82983 0.538812L6.38599 1.12769ZM1.16673 5.49992L0.888651 5.20548L0.576891 5.49992L0.888651 5.79436L1.16673 5.49992ZM5.82983 10.461C5.99244 10.6146 6.24877 10.6073 6.40235 10.4447C6.55593 10.2821 6.54861 10.0257 6.38599 9.87214L5.82983 10.461ZM5.82983 0.538812L0.888651 5.20548L1.44482 5.79436L6.38599 1.12769L5.82983 0.538812ZM0.888651 5.79436L5.82983 10.461L6.38599 9.87214L1.44482 5.20548L0.888651 5.79436Z"></path>
+                  </svg>
+                </div></a></li>
+            <li><a class="breadcrumbs__link" aria-current="page"><span class="breadcrumbs__link-text">תוצאות חיפוש</span></a></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="search-catalog__sidebar search-catalog__sidebar--event js-filter-sidebar js-dmi js-accordion" data-multiple="true" data-duration="400">
+        <sidebar class="filter-sidebar"><a class="skip-link" href="#search-list" tabindex="9" aria-label="search filter Skip to search list">Skip to search list</a>
+          <div class="filter-sidebar__top">
+            <h2 class="filter-sidebar__top-title">סינון</h2><a class="link link--title" href="#" tabindex="9">
+              <div class="link__text">ניקוי בחירה</div></a>
+          </div>
+          <div class="filter-sidebar__nav">
+            <div class="filter-button filter-button--in-filter" role="button">
+              <div class="filter-button__icon"><img src="/content/images/icons/filter.svg" width="36" height="36" alt=""></div>
+              <div class="filter-button__text">סינון</div>
+            </div>
+            <div class="filter-sidebar__close js-close-filter">
+              <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.5994 1.39941L1.39941 20.5994M1.39941 1.39941L20.5994 20.5994" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+          <form class="filter-sidebar__body js-accordion-wrap form form--secondary">
+            <div class="filter-item ac">
+              <button class="filter-item__button ac-trigger" type="button" tabindex="9" aria-expanded="false" aria-label="סוג אירוע">
+                <div class="filter-item__title">תחום עניין</div>
+                <div class="filter-item__arrow">
+                  <svg width="19" height="12" viewbox="0 0 19 12" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18934 1.10847C1.57581 0.743459 2.18501 0.760865 2.55002 1.14734L9.55058 8.5597L16.5511 1.14734C16.9161 0.760863 17.5253 0.743457 17.9118 1.10846C18.2983 1.47347 18.3157 2.08267 17.9507 2.46915L9.55058 11.3634L1.15046 2.46915C0.785452 2.08267 0.802858 1.47347 1.18934 1.10847Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="filter-item__body ac-panel">
+                <div class="filter-item__dates">
+                  <div class="form__item form__item--fake input-group input-daterange">
+                    <div class="form__body js-datepicker-to-inline">
+                      <input class="form__input pickerdate js-datepicker js-datepicker-to" type="text" tabindex="9" aria-label="מתאריך" readonly id="date-to-mob" data-id="form" placeholder="מתאריך">
+                      <label class="form__item-icon" for="date-to-mob"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/calendar.svg"></label>
+                    </div>
+                  </div>
+                  <div class="form__item form__item--fake">
+                    <div class="form__body js-datepicker-from-inline">
+                      <input class="form__input pickerdate js-datepicker js-datepicker-from" type="text" tabindex="9" aria-label="תאריך" readonly id="date-from-mob" data-id="form" placeholder="עד תאריך">
+                      <label class="form__item-icon" for="date-from-mob"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/calendar.svg"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter-item ac">
+              <button class="filter-item__button ac-trigger" type="button" tabindex="9" aria-expanded="false" aria-label="סוג אירוע">
+                <div class="filter-item__title">סוג אירוע</div>
+                <div class="filter-item__arrow">
+                  <svg width="19" height="12" viewbox="0 0 19 12" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18934 1.10847C1.57581 0.743459 2.18501 0.760865 2.55002 1.14734L9.55058 8.5597L16.5511 1.14734C16.9161 0.760863 17.5253 0.743457 17.9118 1.10846C18.2983 1.47347 18.3157 2.08267 17.9507 2.46915L9.55058 11.3634L1.15046 2.46915C0.785452 2.08267 0.802858 1.47347 1.18934 1.10847Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="filter-item__body ac-panel">
+                <fieldset>
+                  <label class="checkbox-item" tabindex="-1" for="id1" role="checkbox" aria-checked="true" aria-labelledby="id1">
+                    <input class="checkbox-item__choose" id="id1" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">דה בוקר</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id2" role="checkbox" aria-checked="true" aria-labelledby="id2">
+                    <input class="checkbox-item__choose" id="id2" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id3" role="checkbox" aria-checked="true" aria-labelledby="id3">
+                    <input class="checkbox-item__choose" id="id3" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="filter-item ac">
+              <button class="filter-item__button ac-trigger" type="button" tabindex="9" aria-expanded="false" aria-label="סוג אירוע">
+                <div class="filter-item__title">תחום עניין</div>
+                <div class="filter-item__arrow">
+                  <svg width="19" height="12" viewbox="0 0 19 12" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18934 1.10847C1.57581 0.743459 2.18501 0.760865 2.55002 1.14734L9.55058 8.5597L16.5511 1.14734C16.9161 0.760863 17.5253 0.743457 17.9118 1.10846C18.2983 1.47347 18.3157 2.08267 17.9507 2.46915L9.55058 11.3634L1.15046 2.46915C0.785452 2.08267 0.802858 1.47347 1.18934 1.10847Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="filter-item__body ac-panel">
+                <fieldset>
+                  <label class="checkbox-item" tabindex="-1" for="id4" role="checkbox" aria-checked="true" aria-labelledby="id4">
+                    <input class="checkbox-item__choose" id="id4" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id5" role="checkbox" aria-checked="true" aria-labelledby="id5">
+                    <input class="checkbox-item__choose" id="id5" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id6" role="checkbox" aria-checked="true" aria-labelledby="id6">
+                    <input class="checkbox-item__choose" id="id6" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="filter-item ac">
+              <button class="filter-item__button ac-trigger" type="button" tabindex="9" aria-expanded="false" aria-label="סוג אירוע">
+                <div class="filter-item__title">תחום עניין</div>
+                <div class="filter-item__arrow">
+                  <svg width="19" height="12" viewbox="0 0 19 12" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18934 1.10847C1.57581 0.743459 2.18501 0.760865 2.55002 1.14734L9.55058 8.5597L16.5511 1.14734C16.9161 0.760863 17.5253 0.743457 17.9118 1.10846C18.2983 1.47347 18.3157 2.08267 17.9507 2.46915L9.55058 11.3634L1.15046 2.46915C0.785452 2.08267 0.802858 1.47347 1.18934 1.10847Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="filter-item__body ac-panel">
+                <fieldset>
+                  <label class="checkbox-item" tabindex="-1" for="id7" role="checkbox" aria-checked="true" aria-labelledby="id7">
+                    <input class="checkbox-item__choose" id="id7" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id8" role="checkbox" aria-checked="true" aria-labelledby="id8">
+                    <input class="checkbox-item__choose" id="id8" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                  <label class="checkbox-item" tabindex="-1" for="id9" role="checkbox" aria-checked="true" aria-labelledby="id9">
+                    <input class="checkbox-item__choose" id="id9" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אילת</span></span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="filter-sidebar__b-checks">
+              <label class="checkbox-item" tabindex="-1" for="id99" role="checkbox" aria-checked="true" aria-labelledby="id1">
+                <input class="checkbox-item__choose" id="id99" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אירוע ללא תשלום</span></span>
+              </label>
+              <label class="checkbox-item" tabindex="-1" for="id222" role="checkbox" aria-checked="true" aria-labelledby="id2">
+                <input class="checkbox-item__choose" id="id222" type="checkbox" value="id1"><span class="checkbox-item__box"><span class="checkbox-item__check"></span><span class="checkbox-item__text">אירוע מקוון</span></span>
+              </label>
+            </div>
+          </form>
+          <div class="filter-sidebar__bottom disabled">
+            <div class="filter-sidebar__bottom-right">
+              <div class="filter-sidebar__bottom-text">נמצאו 8 תוצאות</div><a class="link link--title" href="#">
+                <div class="link__text">ניקוי בחירה</div></a>
+            </div>
+            <button class="button button--default button--default-hover"><span class="button__text">חיפוש</span></button>
+          </div>
+        </sidebar>
+      </div>
+      <div class="article-search">
+        <div class="container">
+          <div class="article-search__top test js-uniq-top">
+            <h1 class="title title--mid title--dark">אירועים</h1>
+            <h2 class="title title--sub title--dark">כל מה שקורה באוניברסיטת בן גוריון בנגב. תוכלו ללראות את כל האירועים העתידיים וגם לחפש אירועים מהעבר.</h2>
+            <form class="form form--article-test">
+              <div class="form__item mob-show">
+                <div class="form__body">
+                  <input class="form__input" type="text" tabindex="9" id="search" name="calendar-to" placeholder="חיפוש">
+                  <div class="form__item-icon form__item-icon--search"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/lupa.svg"></div>
+                </div>
+              </div>
+              <div class="form__item form__item--fake input-group input-daterange">
+                <div class="form__body js-datepicker-to-inline">
+                  <input class="form__input pickerdate js-datepicker js-datepicker-to" type="text" tabindex="9" readonly id="date-to" data-id="form" placeholder="מתאריך">
+                  <label class="form__item-icon" for="date-to"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/calendar.svg"></label>
+                </div>
+              </div>
+              <div class="form__item form__item--fake">
+                <div class="form__body js-datepicker-from-inline">
+                  <input class="form__input pickerdate js-datepicker js-datepicker-from" type="text" tabindex="9" readonly id="date-from" data-id="form" placeholder="עד תאריך">
+                  <label class="form__item-icon" for="date-from"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/calendar.svg"></label>
+                </div>
+              </div>
+              <div class="form-item">
+                <div class="inp inp_select" :class="[classObject , wrapperClasses]" @keyup="searchOptions($event)" @keydown.tab="onTab($event)" @keydown.esc="onEsc($event)" ref="selectDiv">
+                  <div class="inp__arrow"></div>
+                  <label class="inp__label" v-if="isSearchSelect&amp;&amp;!label" :class="labelClasses" for="seelct" @click="openCloseSelect()" ref="label">סוג אירוע</label>
+                  <input class="inp__field custom-select" tabindex="9" id="seelct" autocomplete="off" :id="'input'+(tagId)" :class="[isSearchSelect?'':'readonly',inputClasses]" :aria-label="(placeHolder)+' '+(selectedOption.value)" @keypress="setInputAsReadOnly($event)" :aria-required="requiredField" type="text" ref="inputField" v-model="inputValue" :aria-expanded="isOpen" :aria-owns="'dropDownOptions'+(tagId)" role="combobox" :aria-activedescendant="'option'+(arrowCounter)+(tagId)" @keydown.down="onArrowDown()" @keydown.up="onArrowUp()" @keydown.enter="onEnter()" :placeholder="!isSearchSelect&amp;&amp;!label?placeHolder:''" :disabled="disabled"><span class="inp__hidden-span" @click="openCloseSelect()"></span><span class="sr-only" id="li-active-item">selectedOption</span>
+                  <div class="drop-block js-drop hide">
+                    <div class="drop-block__body">
+                      <div class="drop-block__text"></div>
+                    </div>
+                  </div>
+                  <div class="inp__dropdown-wrapper custom-select-drop" :class="ulContainerClasses" name="inp__dropdown-wrapper" ref="dropdownWrapper">
+                    <ul class="inp__dropdown clear-ul-style" ref="ulContainer" :class="[isNotFound?'show-not-found':'',ulClasses]" :id="'dropDownOptions'+(tagId)" role="listbox">
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <!--li.not_found(v-if='isNotFound' :class="{'show':isNotFound}") {{notFoundText}}-->
+                    </ul>
+                  </div>
+                  <div class="message" hidden>
+                    <label class="error-message" id="customSelectError" v-if="showRequiredError" :class="errorMessageClasses" ref="requiredErrorText">{{requiredErrorText}}</label><span class="sr-only" role="alert" v-if="showRequiredError">{{placeHolder}} {{requiredErrorText}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-item">
+                <div class="inp inp_select" :class="[classObject , wrapperClasses]" @keyup="searchOptions($event)" @keydown.tab="onTab($event)" @keydown.esc="onEsc($event)" ref="selectDiv">
+                  <div class="inp__arrow"></div>
+                  <label class="inp__label" v-if="isSearchSelect&amp;&amp;!label" :class="labelClasses" for="seelct" @click="openCloseSelect()" ref="label">תחום עניין</label>
+                  <input class="inp__field custom-select" tabindex="9" id="seelct" autocomplete="off" :id="'input'+(tagId)" :class="[isSearchSelect?'':'readonly',inputClasses]" :aria-label="(placeHolder)+' '+(selectedOption.value)" @keypress="setInputAsReadOnly($event)" :aria-required="requiredField" type="text" ref="inputField" v-model="inputValue" :aria-expanded="isOpen" :aria-owns="'dropDownOptions'+(tagId)" role="combobox" :aria-activedescendant="'option'+(arrowCounter)+(tagId)" @keydown.down="onArrowDown()" @keydown.up="onArrowUp()" @keydown.enter="onEnter()" :placeholder="!isSearchSelect&amp;&amp;!label?placeHolder:''" :disabled="disabled"><span class="inp__hidden-span" @click="openCloseSelect()"></span><span class="sr-only" id="li-active-item">selectedOption</span>
+                  <div class="drop-block js-drop hide">
+                    <div class="drop-block__body">
+                      <div class="drop-block__text"></div>
+                    </div>
+                  </div>
+                  <div class="inp__dropdown-wrapper custom-select-drop" :class="ulContainerClasses" name="inp__dropdown-wrapper" ref="dropdownWrapper">
+                    <ul class="inp__dropdown clear-ul-style" ref="ulContainer" :class="[isNotFound?'show-not-found':'',ulClasses]" :id="'dropDownOptions'+(tagId)" role="listbox">
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <!--li.not_found(v-if='isNotFound' :class="{'show':isNotFound}") {{notFoundText}}-->
+                    </ul>
+                  </div>
+                  <div class="message" hidden>
+                    <label class="error-message" id="customSelectError" v-if="showRequiredError" :class="errorMessageClasses" ref="requiredErrorText">{{requiredErrorText}}</label><span class="sr-only" role="alert" v-if="showRequiredError">{{placeHolder}} {{requiredErrorText}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-item">
+                <div class="inp inp_select" :class="[classObject , wrapperClasses]" @keyup="searchOptions($event)" @keydown.tab="onTab($event)" @keydown.esc="onEsc($event)" ref="selectDiv">
+                  <div class="inp__arrow"></div>
+                  <label class="inp__label" v-if="isSearchSelect&amp;&amp;!label" :class="labelClasses" for="seelct" @click="openCloseSelect()" ref="label">קמפוס</label>
+                  <input class="inp__field custom-select" tabindex="9" id="seelct" autocomplete="off" :id="'input'+(tagId)" :class="[isSearchSelect?'':'readonly',inputClasses]" :aria-label="(placeHolder)+' '+(selectedOption.value)" @keypress="setInputAsReadOnly($event)" :aria-required="requiredField" type="text" ref="inputField" v-model="inputValue" :aria-expanded="isOpen" :aria-owns="'dropDownOptions'+(tagId)" role="combobox" :aria-activedescendant="'option'+(arrowCounter)+(tagId)" @keydown.down="onArrowDown()" @keydown.up="onArrowUp()" @keydown.enter="onEnter()" :placeholder="!isSearchSelect&amp;&amp;!label?placeHolder:''" :disabled="disabled"><span class="inp__hidden-span" @click="openCloseSelect()"></span><span class="sr-only" id="li-active-item">selectedOption</span>
+                  <div class="drop-block js-drop hide">
+                    <div class="drop-block__body">
+                      <div class="drop-block__text"></div>
+                    </div>
+                  </div>
+                  <div class="inp__dropdown-wrapper custom-select-drop" :class="ulContainerClasses" name="inp__dropdown-wrapper" ref="dropdownWrapper">
+                    <ul class="inp__dropdown clear-ul-style" ref="ulContainer" :class="[isNotFound?'show-not-found':'',ulClasses]" :id="'dropDownOptions'+(tagId)" role="listbox">
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">שדה בוקר</span></li>
+                      <li class="custom-select-item js-custom-select-item-multiple" role="option" tabindex="9" v-for="(option,index) of filteredOptionsList" :aria-selected="[option.key==selectedOption.key?'true':'false']" :id="'option'+(index)+(tagId)" :key="index" :aria-label="option.value" ref="li" :class="[option.key==selectedOption.key?'selected':'',index === arrowCounter?'is-active':'',liClasses]" @click="selectOption(option)" @keydown.enter="selectOption(option)"><span class="custom-select-item__check"></span><span class="custom-select-item__name">באר שבע</span></li>
+                      <!--li.not_found(v-if='isNotFound' :class="{'show':isNotFound}") {{notFoundText}}-->
+                    </ul>
+                  </div>
+                  <div class="message" hidden>
+                    <label class="error-message" id="customSelectError" v-if="showRequiredError" :class="errorMessageClasses" ref="requiredErrorText">{{requiredErrorText}}</label><span class="sr-only" role="alert" v-if="showRequiredError"></span>{{placeHolder}} {{requiredErrorText}}\
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="filter-button js-dmi js-open-filter" role="button">
+              <div class="filter-button__icon"><img src="/content/images/icons/filter.svg" width="36" height="36" alt=""></div>
+              <div class="filter-button__text">סינון (3)</div>
+            </div>
+            <div class="article-search__checks">
+              <div class="checkbox-container checkbox-container--simple" :class="containerCssClass">
+                <label class="item" tabindex="9" role="checkbox" :aria-checked="checked">
+                  <input tabindex="" :id="tagId" id="test4" v-model="checked" type="checkbox" name="radio-vue" :checked="checked" @change="onChange"><span class="checkmark" id="checkmark-confirm"></span>
+                  <label class="label-text" :for="tagId" for="test4">אירוע ללא תשלום</label>
+                </label>
+              </div>
+              <div class="checkbox-container checkbox-container--simple" :class="containerCssClass">
+                <label class="item" tabindex="9" role="checkbox" :aria-checked="checked">
+                  <input tabindex="" :id="tagId" id="test4" v-model="checked" type="checkbox" name="radio-vue" :checked="checked" @change="onChange"><span class="checkmark" id="checkmark-confirm"></span>
+                  <label class="label-text" :for="tagId" for="test4">אירוע מקוון</label>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container container--padding">
+          <div class="article-search__list">
+            <div class="event-item">
+              <div class="event-item__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/pics/event2.jpg"></div>
+              <div class="event-item__body">
+                <div class="event-item__top">
+                  <div class="date-item">
+                    <div class="date-item__numb"><span>18</span><span>דצמבר</span></div>
+                    <div class="date-item__name">בשעה 16:00<br>לובי בית הסטודנט ע״ש זלוטובסקי</div>
+                  </div>
+                  <div class="event-item__top-left">
+                    <div class="label-item">ללא תשלום</div>
+                    <div class="label-item">אירוע מקוון</div>
+                    <div class="link link--dop js-dmi js-help js-close-outside">
+                      <button class="link__icon js-open-drop" aria-expanded="false" tabindex="9" role="button" aria-label="עוד פרקים"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/share.svg" width="26" height="26" alt=""></button>
+                      <div class="link__text js-open-drop">שיתוף</div>
+                      <div class="share-drop js-drop" role="dialog">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">שתפו את הכתבה</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9" aria-label="מייל">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/mail2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">מייל</div></a><a class="share-link" href="#" tabindex="9" aria-label="וואטאפ">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/whatsapp2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">וואטאפ</div></a><a class="share-link" href="#" tabindex="9" aria-label="פייסבוק">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/facebook2.png" width="15" height="21" alt=""></div>
+                              <div class="share-link__name">פייסבוק</div></a><a class="share-link" href="#" tabindex="9" aria-label="טוויטר">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/Twitter2.png" width="20" height="17" alt=""></div>
+                              <div class="share-link__name">טוויטר</div></a><a class="share-link" href="#" tabindex="9" aria-label="לינקדין">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/in3.png" width="20" height="20" alt=""></div>
+                              <div class="share-link__name">לינקדין</div></a></div>
+                          <div class="copy-block">
+                            <button class="copy-block__button js-copy-button">העתק</button>
+                            <input class="copy-block__input" value="https://in.bgu.ac.test3" readonly>
+                            <div class="copy-block__icon"><img src="content/images/icons/copy.svg" width="20" height="20" alt=""></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-item__bottom">
+                  <div class="event-item__bottom-right">
+                    <div class="event-item__name">הדלקת נרות חנוכה וחלוקת סופגניות</div>
+                    <div class="event-item__sub">הרצאה</div>
+                    <div class="event-item__text">דיקנאט הסטודנטים והאגודה הסטודנטיאלית מתכבדים להזמינכן/ם להדלקת נרות ולחלוקת סופגניות במהלך חופש חנוכה בו נחגוג…דיקנאט הסטודנטים...</div>
+                  </div>
+                  <div class="event-item__buttons js-help">
+                    <button class="button js-open-drop button--secondary" tabindex="9" aria-haspopup="list"><span class="button__text js-open-drop">הוספה ליומן</span>
+                      <div class="share-drop share-drop--small js-drop" role="dialog" aria-labelledby="dialog_title" aria-describedby="dialog_description">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">הורדה ליומן</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/google2.png" width="11" height="17" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/soc2.png" width="20" height="20" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/celendar2.png" width="22" height="22" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/yahoo.png" width="31" height="31" alt=""></div></a></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="button button--card button--default-hover js-dmi" tabindex="11" data-mfp="inline" data-mfp-src="#event-popup"><span class="button__text">הרשמה לאירוע</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-item__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/pics/event2.jpg"></div>
+              <div class="event-item__body">
+                <div class="event-item__top">
+                  <div class="date-item">
+                    <div class="date-item__numb"><span>18</span><span>דצמבר</span></div>
+                    <div class="date-item__name">בשעה 16:00<br>לובי בית הסטודנט ע״ש זלוטובסקי</div>
+                  </div>
+                  <div class="event-item__top-left">
+                    <div class="label-item">ללא תשלום</div>
+                    <div class="label-item">אירוע מקוון</div>
+                    <div class="link link--dop js-dmi js-help js-close-outside">
+                      <button class="link__icon js-open-drop" aria-expanded="false" tabindex="9" role="button" aria-label="עוד פרקים"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/share.svg" width="26" height="26" alt=""></button>
+                      <div class="link__text js-open-drop">שיתוף</div>
+                      <div class="share-drop js-drop" role="dialog">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">שתפו את הכתבה</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9" aria-label="מייל">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/mail2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">מייל</div></a><a class="share-link" href="#" tabindex="9" aria-label="וואטאפ">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/whatsapp2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">וואטאפ</div></a><a class="share-link" href="#" tabindex="9" aria-label="פייסבוק">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/facebook2.png" width="15" height="21" alt=""></div>
+                              <div class="share-link__name">פייסבוק</div></a><a class="share-link" href="#" tabindex="9" aria-label="טוויטר">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/Twitter2.png" width="20" height="17" alt=""></div>
+                              <div class="share-link__name">טוויטר</div></a><a class="share-link" href="#" tabindex="9" aria-label="לינקדין">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/in3.png" width="20" height="20" alt=""></div>
+                              <div class="share-link__name">לינקדין</div></a></div>
+                          <div class="copy-block">
+                            <button class="copy-block__button js-copy-button">העתק</button>
+                            <input class="copy-block__input" value="https://in.bgu.ac.test3" readonly>
+                            <div class="copy-block__icon"><img src="content/images/icons/copy.svg" width="20" height="20" alt=""></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-item__bottom">
+                  <div class="event-item__bottom-right">
+                    <div class="event-item__name">הדלקת נרות חנוכה וחלוקת סופגניות</div>
+                    <div class="event-item__sub">הרצאה</div>
+                    <div class="event-item__text">דיקנאט הסטודנטים והאגודה הסטודנטיאלית מתכבדים להזמינכן/ם להדלקת נרות ולחלוקת סופגניות במהלך חופש חנוכה בו נחגוג…דיקנאט הסטודנטים...</div>
+                  </div>
+                  <div class="event-item__buttons js-help">
+                    <button class="button js-open-drop button--secondary" tabindex="9" aria-haspopup="list"><span class="button__text js-open-drop">הוספה ליומן</span>
+                      <div class="share-drop share-drop--small js-drop" role="dialog" aria-labelledby="dialog_title" aria-describedby="dialog_description">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">הורדה ליומן</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/google2.png" width="11" height="17" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/soc2.png" width="20" height="20" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/celendar2.png" width="22" height="22" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/yahoo.png" width="31" height="31" alt=""></div></a></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="button button--card button--default-hover js-dmi" tabindex="11" data-mfp="inline" data-mfp-src="#event-popup"><span class="button__text">הרשמה לאירוע</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-item__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/pics/event2.jpg"></div>
+              <div class="event-item__body">
+                <div class="event-item__top">
+                  <div class="date-item">
+                    <div class="date-item__numb"><span>18</span><span>דצמבר</span></div>
+                    <div class="date-item__name">בשעה 16:00<br>לובי בית הסטודנט ע״ש זלוטובסקי</div>
+                  </div>
+                  <div class="event-item__top-left">
+                    <div class="label-item">ללא תשלום</div>
+                    <div class="label-item">אירוע מקוון</div>
+                    <div class="link link--dop js-dmi js-help js-close-outside">
+                      <button class="link__icon js-open-drop" aria-expanded="false" tabindex="9" role="button" aria-label="עוד פרקים"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/share.svg" width="26" height="26" alt=""></button>
+                      <div class="link__text js-open-drop">שיתוף</div>
+                      <div class="share-drop js-drop" role="dialog">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">שתפו את הכתבה</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9" aria-label="מייל">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/mail2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">מייל</div></a><a class="share-link" href="#" tabindex="9" aria-label="וואטאפ">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/whatsapp2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">וואטאפ</div></a><a class="share-link" href="#" tabindex="9" aria-label="פייסבוק">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/facebook2.png" width="15" height="21" alt=""></div>
+                              <div class="share-link__name">פייסבוק</div></a><a class="share-link" href="#" tabindex="9" aria-label="טוויטר">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/Twitter2.png" width="20" height="17" alt=""></div>
+                              <div class="share-link__name">טוויטר</div></a><a class="share-link" href="#" tabindex="9" aria-label="לינקדין">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/in3.png" width="20" height="20" alt=""></div>
+                              <div class="share-link__name">לינקדין</div></a></div>
+                          <div class="copy-block">
+                            <button class="copy-block__button js-copy-button">העתק</button>
+                            <input class="copy-block__input" value="https://in.bgu.ac.test3" readonly>
+                            <div class="copy-block__icon"><img src="content/images/icons/copy.svg" width="20" height="20" alt=""></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-item__bottom">
+                  <div class="event-item__bottom-right">
+                    <div class="event-item__name">הדלקת נרות חנוכה וחלוקת סופגניות</div>
+                    <div class="event-item__sub">הרצאה</div>
+                    <div class="event-item__text">דיקנאט הסטודנטים והאגודה הסטודנטיאלית מתכבדים להזמינכן/ם להדלקת נרות ולחלוקת סופגניות במהלך חופש חנוכה בו נחגוג…דיקנאט הסטודנטים...</div>
+                  </div>
+                  <div class="event-item__buttons js-help">
+                    <button class="button js-open-drop button--secondary" tabindex="9" aria-haspopup="list"><span class="button__text js-open-drop">הוספה ליומן</span>
+                      <div class="share-drop share-drop--small js-drop" role="dialog" aria-labelledby="dialog_title" aria-describedby="dialog_description">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">הורדה ליומן</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/google2.png" width="11" height="17" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/soc2.png" width="20" height="20" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/celendar2.png" width="22" height="22" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/yahoo.png" width="31" height="31" alt=""></div></a></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="button button--card button--default-hover js-dmi" tabindex="11" data-mfp="inline" data-mfp-src="#event-popup"><span class="button__text">הרשמה לאירוע</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-item__img"><img class="lazy" src="content/images/empty.gif" data-src="content/images/pics/event2.jpg"></div>
+              <div class="event-item__body">
+                <div class="event-item__top">
+                  <div class="date-item">
+                    <div class="date-item__numb"><span>18</span><span>דצמבר</span></div>
+                    <div class="date-item__name">בשעה 16:00<br>לובי בית הסטודנט ע״ש זלוטובסקי</div>
+                  </div>
+                  <div class="event-item__top-left">
+                    <div class="label-item">ללא תשלום</div>
+                    <div class="label-item">אירוע מקוון</div>
+                    <div class="link link--dop js-dmi js-help js-close-outside">
+                      <button class="link__icon js-open-drop" aria-expanded="false" tabindex="9" role="button" aria-label="עוד פרקים"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/share.svg" width="26" height="26" alt=""></button>
+                      <div class="link__text js-open-drop">שיתוף</div>
+                      <div class="share-drop js-drop" role="dialog">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">שתפו את הכתבה</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9" aria-label="מייל">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/mail2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">מייל</div></a><a class="share-link" href="#" tabindex="9" aria-label="וואטאפ">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/whatsapp2.png" width="31" height="31" alt=""></div>
+                              <div class="share-link__name">וואטאפ</div></a><a class="share-link" href="#" tabindex="9" aria-label="פייסבוק">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/facebook2.png" width="15" height="21" alt=""></div>
+                              <div class="share-link__name">פייסבוק</div></a><a class="share-link" href="#" tabindex="9" aria-label="טוויטר">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/Twitter2.png" width="20" height="17" alt=""></div>
+                              <div class="share-link__name">טוויטר</div></a><a class="share-link" href="#" tabindex="9" aria-label="לינקדין">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/in3.png" width="20" height="20" alt=""></div>
+                              <div class="share-link__name">לינקדין</div></a></div>
+                          <div class="copy-block">
+                            <button class="copy-block__button js-copy-button">העתק</button>
+                            <input class="copy-block__input" value="https://in.bgu.ac.test3" readonly>
+                            <div class="copy-block__icon"><img src="content/images/icons/copy.svg" width="20" height="20" alt=""></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-item__bottom">
+                  <div class="event-item__bottom-right">
+                    <div class="event-item__name">הדלקת נרות חנוכה וחלוקת סופגניות</div>
+                    <div class="event-item__sub">הרצאה</div>
+                    <div class="event-item__text">דיקנאט הסטודנטים והאגודה הסטודנטיאלית מתכבדים להזמינכן/ם להדלקת נרות ולחלוקת סופגניות במהלך חופש חנוכה בו נחגוג…דיקנאט הסטודנטים...</div>
+                  </div>
+                  <div class="event-item__buttons js-help">
+                    <button class="button js-open-drop button--secondary" tabindex="9" aria-haspopup="list"><span class="button__text js-open-drop">הוספה ליומן</span>
+                      <div class="share-drop share-drop--small js-drop" role="dialog" aria-labelledby="dialog_title" aria-describedby="dialog_description">
+                        <div class="share-drop__body">
+                          <div class="share-drop__title">הורדה ליומן</div>
+                          <div class="share-drop__list"><a class="share-link" href="#" tabindex="9">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/google2.png" width="11" height="17" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/soc2.png" width="20" height="20" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/celendar2.png" width="22" height="22" alt=""></div></a><a class="share-link" href="#" tabindex="11">
+                              <div class="share-link__icon"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/yahoo.png" width="31" height="31" alt=""></div></a></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="button button--card button--default-hover js-dmi" tabindex="11" data-mfp="inline" data-mfp-src="#event-popup"><span class="button__text">הרשמה לאירוע</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pagination"><a class="pagination__link pagination__link--next" href="#" tabindex="9">
+              <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.822782 2.91714C0.308839 2.43175 0.285692 1.62163 0.771083 1.10769C1.25647 0.593743 2.06659 0.570597 2.58054 1.05599L0.822782 2.91714ZM8.02637 7.9599L8.90524 7.02932L9.89056 7.9599L8.90524 8.89047L8.02637 7.9599ZM2.58054 14.8638C2.06659 15.3492 1.25647 15.3261 0.771083 14.8121C0.285692 14.2982 0.308839 13.488 0.822782 13.0027L2.58054 14.8638ZM2.58054 1.05599L8.90524 7.02932L7.14749 8.89047L0.822782 2.91714L2.58054 1.05599ZM8.90524 8.89047L2.58054 14.8638L0.822782 13.0027L7.14749 7.02932L8.90524 8.89047Z"></path>
+              </svg></a><a class="pagination__link" href="#" tabindex="9">1</a><a class="pagination__link active" href="#" tabindex="9">2</a><a class="pagination__link" href="#" tabindex="9">3</a><a class="pagination__link" href="#" tabindex="9">...</a><a class="pagination__link" href="#" tabindex="9">10</a><a class="pagination__link" href="#" tabindex="9">11</a><a class="pagination__link pagination__link--prev" href="#" tabindex="9">
+              <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.17697 2.91714C9.69092 2.43175 9.71406 1.62163 9.22867 1.10769C8.74328 0.593743 7.93316 0.570597 7.41922 1.05599L9.17697 2.91714ZM1.97339 7.9599L1.09451 7.02932L0.109196 7.9599L1.09451 8.89047L1.97339 7.9599ZM7.41922 14.8638C7.93316 15.3492 8.74328 15.3261 9.22867 14.8121C9.71406 14.2982 9.69092 13.488 9.17697 13.0027L7.41922 14.8638ZM7.41922 1.05599L1.09451 7.02932L2.85227 8.89047L9.17697 2.91714L7.41922 1.05599ZM1.09451 8.89047L7.41922 14.8638L9.17697 13.0027L2.85227 7.02932L1.09451 8.89047Z"></path>
+              </svg></a></div>
+        </div>
+      </div>
+      <div class="section section--footer">
+        <div class="inner-bottom">
+          <div class="inner-bottom__top lazy" data-background-image="content/images/pics/form-back.png">
+            <div class="uniq-form">
+              <h4 class="uniq-form__title">רוצה לדעת עוד?</h4>
+              <div class="uniq-form__sub">אפשר לתאם פגישת יעוץ או סתם לדברבטלפון, אנחנו נשמח לענות לכל שאלה!</div>
+              <form class="form-vue">
+                <div class="form-vue__input">
+                  <input autocomplete="off" name="name" id="name" tabindex="9" placeholder="* שם פרטי">
+                </div>
+                <div class="form-vue__input">
+                  <input autocomplete="off" name="phone" id="phone" tabindex="9" placeholder="* שם משפחה">
+                </div>
+                <div class="form-vue__input">
+                  <input autocomplete="off" name="spec" id="spec" tabindex="9" placeholder="* מייל">
+                </div>
+                <div class="form-vue__input">
+                  <input autocomplete="off" name="spec2" id="spec2" tabindex="9" placeholder="* נייד">
+                </div>
+                <div class="form-vue__input form-vue__input--select">
+                  <select class="js-dmi js-select" name="choose" id="choose" tabindex="9">
+                    <option selected disabled>*מה מעניין אותך?</option>
+                    <option value="second">second</option>
+                    <option value="third">third</option>
+                    <option value="four">four</option>
+                    <option value="five">five</option>
+                    <option value="six">six</option>
+                    <option value="seven">seven</option>
+                    <option value="eight">eight</option>
+                  </select>
+                </div>
+                <div class="form-vue__checkbox">
+                  <label tabindex="9">
+                    <input class="form-vue__choose" type="checkbox" value="1"><span class="form-vue__box"><span class="form-vue__check"></span><span class="form-vue__text">אשמח לקבל מידע על ימים פתוחים, סיורים בקמפוס, מפגשי היכרות, ופעילויות נוספות בקמפוס</span></span>
+                  </label>
+                </div>
+                <div class="form-vue__submit">
+                  <button class="button button--inner button--inner-shadow" tabindex="9"><span class="button__text">חזרו אליי</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="container container--padding">
+            <div class="inner-bottom__footer">
+              <h4 class="inner-bottom__title">דברו איתנו במדור רישום</h4>
+              <div class="inner-bottom__date">ימים א-ה 08:00 - 16:00</div>
+              <div class="inner-bottom__connect"><a class="link link--connect" href="tel:086461600" tabindex="9">
+                  <div class="link__icon"><img role="presentation" aria-hidden="true" src="content/images/icons/phone2.svg" width="40" height="40"></div>
+                  <div class="link__text">08-6461600</div></a><a class="link link--connect" href="tel:0776461600" tabindex="9">
+                  <div class="link__icon"><img role="presentation" aria-hidden="true" src="content/images/icons/chet.svg" width="40" height="40"></div>
+                  <div class="link__text">077-6461600</div></a><a class="link link--connect" href="mailto:mail@bgu.ac.il" tabindex="9">
+                  <div class="link__icon"><img role="presentation" aria-hidden="true" src="content/images/icons/mail.svg" width="40" height="40"></div>
+                  <div class="link__text">mail@bgu.ac.il</div></a></div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="footer__hidden">
+            <div class="js-select"></div>
+          </div>
+          <div class="container container--padding">
+            <div class="footer__list js-accordion" data-multiple>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">תואר ראשון</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">לקטלוג המלא של תואר ראשון</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">לימודים נוספים</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">תואר שלישי</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">בתר דוקטור</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">לימודים קדם אקדמיים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">תעודת הוראה ולימודי המשך</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">תכניות בינלאומיות</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">מחקר ויזמות</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">מחקר בבן גוריון</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">חיפוש מנחים.ות</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">יזמות וחדשנות</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">המרכז ליזמות</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">פארק ההייטק</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">חדשות המחקר</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">כללי</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">יצירת קשר</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">דרכי הגעה</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">דרושים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">מכרזים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">לוח מודעות</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">קישורים שימושיים</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">האיזור האישי למועמדים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">האיזור האישי לסטודנטים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">אתר התשלומים</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">רדיו BGU</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">תואר ראשון</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11"  xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">שם של תואר ראשון ארוך מאד מאד</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">לקטלוג המלא של תואר ראשון</div></a></li>
+                </ul>
+              </div>
+              <div class="footer__column ac">
+                <div class="footer__column-top ac-trigger">
+                  <div class="title title--bold title--small">מידע למתעניינים</div>
+                  <div class="footer__column-icon">
+                    <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.712951 1.11527C1.10952 0.730885 1.74261 0.740766 2.12699 1.13734L8.5386 7.75228L15.3793 1.1156C15.7757 0.731026 16.4088 0.740608 16.7933 1.137C17.1779 1.53339 17.1683 2.16648 16.7719 2.55105L9.21319 9.88438C9.02278 10.0691 8.76676 10.1706 8.50149 10.1665C8.23623 10.1625 7.98345 10.0531 7.79881 9.86264L0.69088 2.52931C0.306498 2.13274 0.316379 1.49965 0.712951 1.11527Z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul class="footer__column-list clear-ul-style ac-panel">
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">החוויה הסטודנטיאלית</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">אחרי שהתקבלת</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">מידע שימושי</div></a></li>
+                  <li><a class="link link--footer-column" href="#" tabindex="11">
+                      <div class="link__text">רישום אונליין לאוניברסיטה</div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__body">
+            <div class="footer__back-mob"><img class="lazy" src="content/images/empty.gif" data-src="content/images/triangles/footer.png" width="375" height="166" alt=""></div>
+            <div class="footer__right">
+              <ul class="social-block clear-ul-style">
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="facebook"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/facebook.png" width="26" height="26" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="intime"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/in.png" width="26" height="26" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="twitter"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/twitter.png" width="26" height="26" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="youtube"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/yt.png" width="30" height="20" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="instagram"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/instagram.png" width="26" height="26" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="tiktok"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/tiktok.png" width="26" height="26" alt=""></a></li>
+                <li><a class="social-block__item" href="#" tabindex="11" aria-label="telega"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/telega.png" width="26" height="26" alt=""></a></li>
+              </ul>
+              <ul class="footer__menu clear-ul-style">
+                <li><a class="link link--footer" href="#" tabindex="11">
+                    <div class="link__text">תנאי שימוש באתר</div></a></li>
+                <li><a class="link link--footer" href="#" tabindex="11">
+                    <div class="link__text">הצהרת נגישות</div></a></li>
+                <li><a class="link link--footer" href="#" tabindex="11">
+                    <div class="link__text">סיור וירטואלי</div></a></li>
+              </ul>
+            </div>
+            <div class="footer__left"><a class="logo" tabindex="11" aria-label="לוגו אוניברסיטת בן-גוריון בנגב" role="navigation"><img class="lazy" src="content/images/empty.gif" data-src="content/images/icons/logo.png" width="230" height="57" alt=""></a>
+              <div class="footer__triangle"><img src="content/images/triangles/trf.png" width="672" height="131" alt=""></div>
+            </div>
+          </div>
+        </footer>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="scripts/modules/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/modules/lozad.min.js"></script>
+        <script src="scripts/modules/select2.min.js"></script>
+        <script src="scripts/modules/swiper.min.js"></script>
+        <script src="scripts/modules/masonry.min.js"></script>
+        <script type="text/javascript" src="scripts/modules/wavesurfer.min.js"></script>
+        <script type="text/javascript" src="scripts/modules/body-scroll-lock.js"></script>
+        <script type="text/javascript" src="scripts/modules/magnific.js"></script>
+        <script type="text/javascript" src="scripts/modules/swiper/main.js"></script>
+        <script type="text/javascript" src="scripts/modules/jquery-inview.js"></script>
+        <script type="text/javascript" src="scripts/modules/jquery.typeahead.js"></script>
+        <script src="scripts/modules/menu.js"></script>
+        <script src="scripts/modules/smootScroll.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="scripts/common.js"></script>
+        <script src="scripts/call-functions.js"></script>
+      </div>
+    </main>
+  <script type="text/javascript" src="main.js"></script></body>
+  <script src="scripts/modules/moment.min.js"></script>
+  <script src="scripts/modules/bootstrap-datepicker.js"></script>
+  <script src="scripts/modules/bootstrap-datepicker.he.min.js" charset="UTF-8"></script>
+  <script src="scripts/modules/daterangepicker.js"></script>
+</html>

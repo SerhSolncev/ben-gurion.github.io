@@ -1,0 +1,22 @@
+{
+"status": true,
+"error": null,
+"data": [{
+    "name": "Ducks",
+    "img"       : "ducks",
+    "city"      : "Anaheim",
+    "id"        : "ANA",
+    "conference": "Western",
+    "division"  : "Pacific",
+    "disabled"  : true
+},
+    {
+        "name"          :"Thrashers",
+        "img"           :"thrashers",
+        "city"          :"Atlanta",
+        "id"            :"ATL",
+        "conference"    :"Eastern",
+        "division"      :"Southeast"
+    }
+]
+}
