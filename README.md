@@ -1,1 +1,0 @@
-# ben-gurion.github.io

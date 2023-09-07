@@ -26,7 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ae8ec2b-692d-4514-98d8-060278ff2012" name="Default Changelist" comment="" />
+    <list default="true" id="7ae8ec2b-692d-4514-98d8-060278ff2012" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +63,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ben-gurion.github.io-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -226,27 +229,9 @@
       <workItem from="1692256912232" duration="5716000" />
       <workItem from="1693735610464" duration="112000" />
       <workItem from="1693735824998" duration="214000" />
-    </task>
-    <task id="LOCAL-00324" summary="commit #291">
-      <created>1684566304813</created>
-      <option name="number" value="00324" />
-      <option name="presentableId" value="LOCAL-00324" />
-      <option name="project" value="LOCAL" />
-      <updated>1684566304813</updated>
-    </task>
-    <task id="LOCAL-00325" summary="kdam page fixes">
-      <created>1684568371717</created>
-      <option name="number" value="00325" />
-      <option name="presentableId" value="LOCAL-00325" />
-      <option name="project" value="LOCAL" />
-      <updated>1684568371717</updated>
-    </task>
-    <task id="LOCAL-00326" summary="commit for qa">
-      <created>1684568460750</created>
-      <option name="number" value="00326" />
-      <option name="presentableId" value="LOCAL-00326" />
-      <option name="project" value="LOCAL" />
-      <updated>1684568460750</updated>
+      <workItem from="1693736053066" duration="643000" />
+      <workItem from="1693739209279" duration="862000" />
+      <workItem from="1694124645361" duration="39000" />
     </task>
     <task id="LOCAL-00327" summary="commit #381">
       <created>1684568503447</created>
@@ -570,7 +555,28 @@
       <option name="project" value="LOCAL" />
       <updated>1692276570560</updated>
     </task>
-    <option name="localTasksCounter" value="373" />
+    <task id="LOCAL-00373" summary="fd">
+      <created>1693736077623</created>
+      <option name="number" value="00373" />
+      <option name="presentableId" value="LOCAL-00373" />
+      <option name="project" value="LOCAL" />
+      <updated>1693736077623</updated>
+    </task>
+    <task id="LOCAL-00374" summary="fd">
+      <created>1693739282434</created>
+      <option name="number" value="00374" />
+      <option name="presentableId" value="LOCAL-00374" />
+      <option name="project" value="LOCAL" />
+      <updated>1693739282434</updated>
+    </task>
+    <task id="LOCAL-00375" summary="fd">
+      <created>1693739467812</created>
+      <option name="number" value="00375" />
+      <option name="presentableId" value="LOCAL-00375" />
+      <option name="project" value="LOCAL" />
+      <updated>1693739467812</updated>
+    </task>
+    <option name="localTasksCounter" value="376" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +612,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="commit #400" />
     <MESSAGE value="commit #404" />
     <MESSAGE value="commit #405" />
     <MESSAGE value="commit #406" />
@@ -631,28 +636,29 @@
     <MESSAGE value="commit #427" />
     <MESSAGE value="commit #426" />
     <MESSAGE value="fix #426 427 pages names" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix #426 427 pages names" />
+    <MESSAGE value="fd" />
+    <option name="LAST_COMMIT_MESSAGE" value="fd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="87" key="CommitChangelistDialog2" timestamp="1692276570060">
+    <state x="585" y="87" key="CommitChangelistDialog2" timestamp="1693739467310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1692276570060" />
+    <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1693739467310" />
     <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1689760967539" />
     <state x="92" y="92" width="1736" height="853" key="DiffContextDialog" timestamp="1688465345038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="853" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1688465345038" />
     <state x="92" y="92" width="1736" height="853" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1687435393478" />
-    <state x="740" y="275" width="440" height="487" key="FileChooserDialogImpl" timestamp="1693735721788">
+    <state x="740" y="275" width="440" height="487" key="FileChooserDialogImpl" timestamp="1693739454882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1693735721788" />
+    <state x="740" y="275" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1693739454882" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1689788902161" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1692276573302">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1693739470275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1692276573302" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1693739470275" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1688990872222" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1688466380344">
       <screen x="0" y="0" width="1920" height="1040" />
