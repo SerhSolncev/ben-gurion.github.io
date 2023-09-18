@@ -27,7 +27,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ae8ec2b-692d-4514-98d8-060278ff2012" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-empty.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-filter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites-empty.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program-page-v2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/program-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-result-empty.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/students-life.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thank-popup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/univercity-and-com.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/useful-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/village.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,14 +245,8 @@
       <workItem from="1693735824998" duration="214000" />
       <workItem from="1693736053066" duration="643000" />
       <workItem from="1693739209279" duration="862000" />
-      <workItem from="1694124645361" duration="589000" />
-    </task>
-    <task id="LOCAL-00329" summary="commit #383">
-      <created>1684568636522</created>
-      <option name="number" value="00329" />
-      <option name="presentableId" value="LOCAL-00329" />
-      <option name="project" value="LOCAL" />
-      <updated>1684568636522</updated>
+      <workItem from="1694124645361" duration="783000" />
+      <workItem from="1695044963373" duration="57000" />
     </task>
     <task id="LOCAL-00330" summary="commit #385">
       <created>1684569039880</created>
@@ -575,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694124880738</updated>
     </task>
-    <option name="localTasksCounter" value="378" />
+    <task id="LOCAL-00378" summary="fd">
+      <created>1694125243364</created>
+      <option name="number" value="00378" />
+      <option name="presentableId" value="LOCAL-00378" />
+      <option name="project" value="LOCAL" />
+      <updated>1694125243364</updated>
+    </task>
+    <option name="localTasksCounter" value="379" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,10 +655,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="87" key="CommitChangelistDialog2" timestamp="1694124880286">
+    <state x="585" y="87" key="CommitChangelistDialog2" timestamp="1694125242971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1694124880286" />
+    <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1694125242971" />
     <state x="585" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1689760967539" />
     <state x="92" y="92" width="1736" height="853" key="DiffContextDialog" timestamp="1688465345038">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -654,10 +670,10 @@
     </state>
     <state x="740" y="275" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1693739454882" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1689788902161" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1694124995198">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1694125245765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1694124995198" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1694125245765" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1688990872222" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1694125238348">
       <screen x="0" y="0" width="1920" height="1040" />
